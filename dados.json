@@ -1,0 +1,23 @@
+[
+    {
+        "texto": "Estou com problema no pagamento do boleto e preciso de ajuda urgente.",
+        "categoria": "suporte",
+        "resumo": "Estou com problema no pagamento do boleto e preciso de ajuda urgente.",
+        "acao": "Encaminhar para equipe de suporte",
+        "data": "2026-04-20 00:33:44.846973"
+    },
+    {
+        "texto": "Ser\u00e1 que eu sou ruim",
+        "categoria": "geral",
+        "resumo": "Ser\u00e1 que eu sou ruim",
+        "acao": "Armazenar para an\u00e1lise",
+        "data": "2026-04-20 00:47:44.221662"
+    },
+    {
+        "texto": "Ser\u00e1 que eu sou ruim",
+        "categoria": "geral",
+        "resumo": "Ser\u00e1 que eu sou ruim",
+        "acao": "Armazenar para an\u00e1lise",
+        "data": "2026-04-20 00:47:59.247326"
+    }
+]
