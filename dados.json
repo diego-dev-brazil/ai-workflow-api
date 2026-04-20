@@ -19,5 +19,26 @@
         "resumo": "Ser\u00e1 que eu sou ruim",
         "acao": "Armazenar para an\u00e1lise",
         "data": "2026-04-20 00:47:59.247326"
+    },
+    {
+        "texto": "Pagamento feito.",
+        "categoria": "financeiro",
+        "resumo": "Pagamento feito.",
+        "acao": "Enviar para setor financeiro",
+        "data": "2026-04-20 14:32:10.101089"
+    },
+    {
+        "texto": "Problema com pagamento.",
+        "categoria": "suporte",
+        "resumo": "Problema com pagamento.",
+        "acao": "Encaminhar para equipe de suporte",
+        "data": "2026-04-20 14:47:14.539691"
+    },
+    {
+        "texto": "N\u00e3o recebi o produto.",
+        "categoria": "vendas",
+        "resumo": "N\u00e3o recebi o produto.",
+        "acao": "Encaminhar para CRM",
+        "data": "2026-04-20 14:48:13.067650"
     }
 ]

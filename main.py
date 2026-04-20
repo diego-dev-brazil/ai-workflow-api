@@ -3,7 +3,8 @@ from pydantic import BaseModel
 import json
 from datetime import datetime
 from fastapi import HTTPException
-
+import os
+print("ARQUIVO EXECUTADO:", __file__)
 app = FastAPI()
 print("ARQUIVO CERTO CARREGADO")
 class InputData(BaseModel):
@@ -23,6 +24,7 @@ def classificar_texto(texto):
 
 def gerar_resumo(texto):
     frases = texto.split(".")
+    #aqui enviaria pra um agente de i.a mas to simulando só
     return ". ".join(frases[:2]).strip()
 
 def definir_acao(categoria):
@@ -36,6 +38,8 @@ def definir_acao(categoria):
         return "Armazenar para análise"
 
 def salvar_dados(dados):
+    
+    print("SALVANDO EM:", os.getcwd())
     try:
         with open("dados.json", "r") as f:
             banco = json.load(f)
@@ -49,8 +53,11 @@ def salvar_dados(dados):
 
 @app.post("/webhook")
 def processar_texto(data: InputData):
+    print("ENTROU NO WEBHOOK")
     if not data.texto.strip():
+        print("TEXTO VAZIO")
         raise HTTPException(status_code=400, detail="Texto não pode ser vazio")
+    print("ANTES DE PROCESSAR")
     categoria = classificar_texto(data.texto)
     resumo = gerar_resumo(data.texto)
     acao = definir_acao(categoria)
@@ -62,9 +69,13 @@ def processar_texto(data: InputData):
         "acao": acao,
         "data": str(datetime.now())
     }
+    salvar_dados(resultado)
+    return resultado
 
 @app.get("/dados")
 def listar_dados():
+    
+    print("LENDO DE:", os.getcwd())
     try:
         with open("dados.json", "r") as f:
              return json.load(f)
